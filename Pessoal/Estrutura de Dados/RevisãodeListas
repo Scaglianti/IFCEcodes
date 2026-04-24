@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct lista{
+    int info;
+    Lista* prox;
+}Lista;
+
+int Null()
+{
+    return Null;
+}
+Lista* lst_insere(Lista* l,int info)
+{
+    Lista* novo = (Lista*) malloc(sizeof(Lista));
+    novo->info = info;
+    novo->prox = l;
+    return novo;
+}
+Lista* lst_remove(Lista*l,int info)
+{
+    Lista* atual;
+    Lista* anterior;
+    for(atual = l,anterior = NULL;atual != Null && atual->info != info; anterior = atual, atual = atual->prox);
+
+    if(atual==NULL)
+    {
+        printf("Valor nao encontrado!");
+        return l;
+    }
+
+    if(anterior==NULL)
+    {
+        return atual->prox;
+    }
+    else
+    {
+        anterior->prox=atual->prox;
+    }
+    free(atual);
+    return l;
+}
+void lst_libera(Lista* l)
+{
+    Lista* aux;
+    while(l!=NULL)
+    {
+        aux = l->prox;
+        free(l);
+        l = aux;
+    }
+    
+}
+int primo(int n)
+{
+    int bool = 0;
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            if(i==1 || i==n)
+            {
+                bool = 1;
+            }
+            else
+            return 0;
+        }
+        else
+        return 0;
+    }
+    return bool;
+}
+int lst_qtd_primos(Lista* l)
+{
+    int c=0;
+    Lista* p;
+    for(p=l;p!=Null;p=l->prox)
+    {
+        if(primo(p))
+        {
+            c++;
+        } 
+    }
+}
+
