@@ -81,3 +81,11 @@ int main()
 
     return 0;
 }
+
+/*
+    Correções nas linhas:
+    50;
+    60;
+    61;
+    65
+*/
