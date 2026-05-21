@@ -49,7 +49,6 @@ char* pop(Pilha* p)
     free(n);
     return nome;
 }
-
 char* top(Pilha* p)
 {
     if(vazio(p))
