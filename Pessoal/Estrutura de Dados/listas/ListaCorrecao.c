@@ -71,12 +71,12 @@ int main()
     Lista* lst = NULL;
 
     lst = lst_insere(lst,1);
-    lst = lst_insere(lst,2);
+    lst = lst_insere(lst,1);
     lst = lst_insere(lst,3);
-    lst = lst_insere(lst,4);
+    lst = lst_insere(lst,1);
     lst = lst_insere(lst,5);
 
-    lst = lst_deleta_valores(lst,3);
+    lst = lst_deleta_valores(lst,1);
     lst_imprime(lst);
 
     return 0;
