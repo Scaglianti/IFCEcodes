@@ -114,18 +114,18 @@ void liberar(Fila* f)
 
 int main()
 {
-    Fila f;
+    Fila* f;
 
-    inicializar(&f);
+    inicializar(f);
 
-    inserir(&f, 1);
-    inserir(&f, 2);
-    inserir(&f, 3);
+    inserir(f, 1);
+    inserir(f, 2);
+    inserir(f, 3);
 
-    printf("item removido: %d/n", retirar(&f));
+    printf("item removido: %d/n", retirar(f));
 
-    imprimir(&f);
-    liberar(&f);
+    imprimir(f);
+    liberar(f);
 
     return 0;
 }
