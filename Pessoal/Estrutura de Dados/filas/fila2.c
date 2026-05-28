@@ -97,8 +97,8 @@ void esvaziar(Fila* f)
 
 int main()
 {
-    Fila f;
-    cria(&f);
+    Fila* f;
+    cria(f);
     char usu[20];
     char arq[20];
     int validar = 1;
@@ -111,7 +111,7 @@ int main()
         fgets(arq,sizeof(arq),stdin);
        
 
-        adicionar(&f,usu,arq);
+        adicionar(f,usu,arq);
 
         printf("Informe o que deseja fazer agora:\nAdicionar um novo nome - 1\nImprimir o primeiro da fila - 2\nImprimir todos da fila - 3\nFechar o programa - 4\n");
         scanf("%d", &menu);
@@ -123,10 +123,10 @@ int main()
             continue;
             break;
             case 2:
-            retira(&f);
+            retira(f);
             break;
             case 3:
-            imprimir(&f);
+            imprimir(f);
             break;
             case 4:
             printf("Encerrando o sistema...");
